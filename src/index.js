@@ -1,3 +1,14 @@
-import './components/Image';
+import 'normalize.css';
+import './index.scss';
 
-console.log('Hello');
+// Global
+import './components/SiteContent';
+
+// Sidebar components
+import './components/Sidebar';
+import './components/NavMenu';
+import './components/Search';
+import './components/Logo';
+
+// Main content components
+import './components/Content';

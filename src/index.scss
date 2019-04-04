@@ -1,0 +1,46 @@
+@import './_vars.scss';
+@import './_grid.scss';
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:300,400,700');
+@font-face {
+  font-family: 'Agne-Regular';
+  src: url('~A/fonts/Agne-Regular/Agne-Regular.eot?#iefix') format('embedded-opentype'),
+    url('~A/fonts/Agne-Regular/Agne-Regular.otf') format('opentype'),
+    url('~A/fonts/Agne-Regular/Agne-Regular.woff') format('woff'),
+    url('~A/fonts/Agne-Regular/Agne-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: fallback;
+}
+@font-face {
+  font-family: 'MTFSkinnyJeans';
+  src: url('~A/fonts/MTFSkinnyJeans/MTFSkinnyJeans.eot?#iefix') format('embedded-opentype'),
+    url('~A/fonts/MTFSkinnyJeans/MTFSkinnyJeans.woff') format('woff'),
+    url('~A/fonts/MTFSkinnyJeans/MTFSkinnyJeans.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: fallback;
+}
+
+* {
+  box-sizing: border-box;
+  &::before,
+  &::after {
+    box-sizing: border-box;
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-size: 15px;
+  min-width: 320px;
+  position: relative;
+  line-height: 1.65;
+  font-family: $font;
+  @media (min-width: 1200px) {
+    padding: 2.5em 0;
+  }
+}

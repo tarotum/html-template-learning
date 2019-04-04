@@ -1,0 +1,21 @@
+.site-content {
+  & > * {
+    display: none;
+  }
+
+  &[data-type='nav-list'] {
+    .nav-list {
+      display: block;
+    }
+  }
+  &[data-type='search-form'] {
+    .search-form {
+      display: block;
+    }
+  }
+  &[data-type='content'] {
+    .content {
+      display: block;
+    }
+  }
+}
