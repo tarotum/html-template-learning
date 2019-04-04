@@ -3,6 +3,8 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const TerserJSPlugin = require('terser-webpack-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const devMode = process.env.NODE_ENV !== 'production';
 
 const config = {
@@ -23,9 +25,9 @@ const config = {
         test: /\.(sa|sc|c)ss$/,
         use: [
           devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
-          'css-loader',
-          'postcss-loader',
-          'sass-loader'
+          { loader: 'css-loader', options: { sourceMap: !devMode } },
+          { loader: 'postcss-loader', options: { sourceMap: !devMode } },
+          { loader: 'sass-loader', options: { sourceMap: !devMode } }
         ]
       },
       {
@@ -59,6 +61,7 @@ const config = {
       filename: devMode ? 'css/[name].css' : 'css/[name].[hash].css',
       chunkFilename: devMode ? 'css/[id].css' : 'css/[id].[hash].css'
     }),
+
     new HtmlWebpackPlugin({
       filename: path.resolve(__dirname, 'dist/index.html'),
       template: path.resolve(__dirname, 'src/index.html')
@@ -89,6 +92,10 @@ if (devMode) {
       chunkModules: false
     },
     overlay: true
+  };
+} else {
+  config.optimization = {
+    minimizer: [new TerserJSPlugin({}), new OptimizeCssAssetsPlugin({})]
   };
 }
 
