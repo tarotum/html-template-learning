@@ -12,3 +12,4 @@ import './components/Logo';
 
 // Main content components
 import './components/Content';
+import './components/Slider';
