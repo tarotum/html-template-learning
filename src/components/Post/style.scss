@@ -1,0 +1,74 @@
+@import '../../vars.scss';
+
+.post {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 1em 0;
+  margin: 1.5em 0;
+  @media (min-width: 768px) {
+    margin: 3em 0;
+    padding: 2.65em 0;
+    flex-direction: row;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 10%;
+    width: 50%;
+    height: 100%;
+    background-color: lighten($accent, 25);
+    z-index: -1;
+  }
+  &-image {
+    font-size: 0;
+    margin: 0;
+    @media (min-width: 768px) {
+      margin: 0 6rem 0 2rem;
+      width: 35%;
+    }
+    img {
+      max-width: 100%;
+    }
+  }
+  &-content {
+    width: 100%;
+    @media (min-width: 768px) {
+      width: 35%;
+    }
+  }
+  &-title {
+    text-decoration: none;
+    color: $font-color;
+    line-height: 1;
+    font-size: 1.3em;
+    margin: 0;
+    @media (min-width: 768px) {
+      line-height: 1.2;
+      font-size: 3.2em;
+    }
+  }
+  &-data {
+    color: $font-color;
+    font-size: 1em;
+    margin-bottom: 2em;
+    .date,
+    .autor {
+      color: $font-color;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    @media (min-width: 768px) {
+      margin-bottom: 4em;
+      font-size: 1.2em;
+    }
+  }
+  &-link {
+    color: $font-color;
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+}

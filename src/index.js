@@ -13,3 +13,5 @@ import './components/Logo';
 // Main content components
 import './components/Content';
 import './components/Slider';
+import './components/PostList';
+import './components/Post';
